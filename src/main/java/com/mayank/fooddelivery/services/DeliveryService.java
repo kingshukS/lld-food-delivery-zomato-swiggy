@@ -35,7 +35,7 @@ public class DeliveryService {
         }
         deliveryData.getDeliveryById().put(delivery.getId(), delivery);
         List<String> deliveryIds = deliveryData.getDeliveryIdsByDeliveryBoyId()
-                .getOrDefault(delivery.getId(), new ArrayList<>());
+                .getOrDefault(delivery.getDeliveryBoyId(), new ArrayList<>());
         deliveryIds.add(delivery.getId());
         deliveryData.getDeliveryIdsByDeliveryBoyId().put(delivery.getDeliveryBoyId(), deliveryIds);
     }
